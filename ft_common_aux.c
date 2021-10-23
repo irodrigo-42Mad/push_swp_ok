@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:47:17 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/19 12:11:01 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 20:26:50 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,15 @@ void	ft_next_stkelm(char *nptr, long *num)
 // se cambian los punteros por posiciones.
 int	ft_atoi_cnv(char *nptr)
 {
-	long			num;
-	short			sign;
-	register int	i;
+	long	num;
+	short	sign;
 
 	sign = 1;
 	num = 0;
-	i = 0;
-	if (nptr[i] == '-')
+	if (*nptr == '-')
 	{
 		sign = -1;
-		i++;
+		nptr++;
 	}
 	ft_next_stkelm(nptr, &num);
 	if ((sign * num) > INT_MAX || (sign * num) < INT_MIN)
