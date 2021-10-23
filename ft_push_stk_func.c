@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:38:38 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 18:27:32 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 20:51:14 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,12 @@ void	ft_rev_split(int n_elm, t_data **a, t_data **b)
 	}
 }
 
+//sorted = sort_part_stack(*stk, n_elm);
 t_data	*ft_get_axis(int n_elm, t_data **stk)
 {
 	t_data	*sorted;
 	t_data	*axis;
 
-	//sorted = sort_part_stack(*stk, n_elm);
 	sorted = ft_stack_pop(*stk, n_elm);
 	sorted = ft_merge_sort(sorted);
 	axis = ft_goto_el(sorted, n_elm / 2);

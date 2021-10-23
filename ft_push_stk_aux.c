@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:57:43 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 17:47:05 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 20:51:49 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,16 @@ void	ft_max_axisrot(t_data **a, t_data **b)
 		rotate_a(TRUE, a, b);
 }
 
+//sorted = sort_part_stack(*b, n_elm);
 void	ft_restore_back(int n_elm, t_data **a, t_data **b)
 {
 	t_data	*sort;
 	t_data	*max;
 
-	//sorted = sort_part_stack(*b, n_elm);
 	sort = ft_stack_pop(*b, n_elm);
 	sort = ft_merge_sort(sort);
 	while (n_elm)
 	{
-		// por aqui andurio....
 		max = ft_getlast(sort);
 		if ((*b)->pos == 0 || (*b)->pos == ft_getlast(*a)->pos + 1)
 		{
