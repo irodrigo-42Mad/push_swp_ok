@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:38:38 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 10:25:35 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:27:32 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_a_split(int n_elm, t_data **a, t_data **b)
 
 	if (!(*b)->next)
 	{
-		push_a(a, b/*, 1*/);
+		push_a(TRUE, a, b);
 		return ;
 	}
 	pivot = ft_get_axis(n_elm, b);
@@ -29,14 +29,14 @@ void	ft_a_split(int n_elm, t_data **a, t_data **b)
 		if ((*b)->val > pivot->val)
 		{
 			ft_set_sgimit(b, &is_limit_set);
-			push_a(a, b/*, 1*/);
+			push_a(TRUE, a, b);
 		}
 		else
 		{
 			if ((*b)->pos == 0 || (*b)->pos == ft_getlast(*a)->pos + 1)
-				ft_remv_elm_b(a, b/*, 1*/);
+				ft_remv_elm_b(TRUE, a, b);
 			else
-				rotate_b(a, b/*, 1*/);
+				rotate_b(TRUE, a, b);
 		}
 	}
 }
@@ -57,12 +57,12 @@ void	ft_b_split(int n_elm, t_data **a, t_data **b)
 		if ((*a)->seg_lim)
 			limit = (*a)->next;
 		if ((*a)->val <= axis->val)
-			push_b(a, b/*, 1*/);
+			push_b(TRUE, a, b);
 		else
 		{
 			if (n_elm < stk_len)
 				rot++;
-			rotate_a(a, b/*, 1*/);
+			rotate_a(TRUE, a, b);
 		}
 	}
 	ft_stk_rotate_bk(rot, a, b);
@@ -80,12 +80,12 @@ void	ft_tiny_b_split(int n_elm, t_data **a, t_data **b)
 	while (ft_lstlength(*b) < limit)
 	{
 		if ((*a)->pos > 2)
-			push_b(a, b/*, 1*/);
+			push_b(TRUE, a, b);
 		else
-			rotate_a(a, b/*, 1*/);
+			rotate_a(TRUE, a, b);
 	}
 	if ((*b)->next && (*b)->val > ((t_data *)(*b)->next)->val)
-		rotate_b(a, b/*, 1*/);
+		rotate_b(TRUE, a, b);
 }
 
 void	ft_rev_split(int n_elm, t_data **a, t_data **b)

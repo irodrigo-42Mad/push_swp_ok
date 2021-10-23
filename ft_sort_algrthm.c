@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:24:51 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/19 13:13:50 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:25:27 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_data	*ft_merge(t_data *stk_a, t_data *stk_b)
 		if (stk_a->val < stk_b->val)
 			ft_remv_elm_a(&stk_a, &stk_b, &a_elem);
 		else
-			ft_remv_elm_b(&stk_a, &stk_b);
+			ft_remv_elm_b(FALSE, &stk_a, &stk_b);
 	}
 	while (a_elem > 0)
 		ft_remv_elm_a(&stk_a, &stk_b, &a_elem);
 	while (stk_b)
-		ft_remv_elm_b(&stk_a, &stk_b);
+		ft_remv_elm_b(FALSE, &stk_a, &stk_b);
 	return (stk_a);
 }
 

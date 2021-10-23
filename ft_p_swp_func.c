@@ -6,13 +6,12 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:30:52 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/22 13:17:16 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:14:27 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprimary.h"
 
-// hay que juntar estas dos funciones en una sola
 void	ft_push_swap_lite(t_data **a, t_data **b, int len)
 {
 	if (len <= 3)
@@ -44,19 +43,19 @@ void	ft_sort_three(t_data **a, t_data **b)
 	if (ft_has_sorted(*a, 3, ACTIVE))
 		return ;
 	if ((*a)->pos == 1 && !next->pos)
-		swap_a(a, b/*, 1*/);
+		swap_a(TRUE, a, b);
 	else if ((*a)->pos == 2 && next->pos)
 	{
-		swap_a(a, b/*, 1*/);
-		rev_rot_a(a, b/*, 1*/);
+		swap_a(TRUE, a, b);
+		rev_rot_a(TRUE, a, b);
 	}
 	else if ((*a)->pos == 2 && !next->pos)
-		rotate_a(a, b/*, 1*/);
+		rotate_a(TRUE, a, b);
 	else if (!(*a)->pos && next->pos == 2)
 	{
-		swap_a(a, b /*,1*/);
-		rotate_a(a, b/*, 1*/);
+		swap_a(TRUE, a, b);
+		rotate_a(TRUE, a, b);
 	}
 	else
-		rev_rot_a(a, b/*, 1*/);
+		rev_rot_a(TRUE, a, b);
 }

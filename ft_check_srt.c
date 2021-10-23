@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:05:31 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 13:25:37 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:35:17 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	checker(t_data *stk_a, t_data *stk_b)
 
 void	ft_sort(t_data **a, t_data **b, t_data *oper)
 {
-	static	void (*fnc_actions[])(t_data **a, t_data **b/*, int out*/) = {
+	static	void (*fnc_actions[])(int out, t_data **a, t_data **b) = {
 		&push_a, &push_b, &swap_a, &swap_b, &swap_ab,
 		&rotate_a, &rotate_b, &rotate_ab,
 		&rev_rot_a, &rev_rot_b, &rev_rot_ab};
@@ -53,9 +53,9 @@ void	ft_sort(t_data **a, t_data **b, t_data *oper)
 	{
 		while (oper->next)
 		{
-			fnc_actions[oper->val](a, b/*, 0*/);
+			fnc_actions[oper->val](FALSE, a, b);
 			oper = oper->next;
 		}
-		fnc_actions[oper->val](a, b/*, 0*/);
+		fnc_actions[oper->val](FALSE, a, b);
 	}
 }

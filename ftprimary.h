@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:02:12 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 13:30:27 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 18:11:34 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,23 @@ typedef struct s_data {
 ** STACKS Actions and operations
 */
 void	push(t_data **my_stack, t_data **dest);
-void	push_a(t_data **stk_b, t_data **stk_a);
-void	push_b(t_data **stk_a, t_data **stk_b);
+void	push_a(int out, t_data **stk_b, t_data **stk_a);
+void	push_b(int out, t_data **stk_a, t_data **stk_b);
 
 void	swap(t_data **my_stack);
-void	swap_a(t_data **stk_a, t_data **stk_b);
-void	swap_b(t_data **stk_a, t_data **stk_b);
-void	swap_ab(t_data **stk_a, t_data **stk_b);
+void	swap_a(int out, t_data **stk_a, t_data **stk_b);
+void	swap_b(int out, t_data **stk_a, t_data **stk_b);
+void	swap_ab(int out, t_data **stk_a, t_data **stk_b);
 
 void	rotate(t_data **stk);
-void	rotate_a(t_data **stk_a, t_data **stk_b);
-void	rotate_b(t_data **stk_a, t_data **stk_b);
-void	rotate_ab(t_data **stk_a, t_data **stk_b);
+void	rotate_a(int out, t_data **stk_a, t_data **stk_b);
+void	rotate_b(int out, t_data **stk_a, t_data **stk_b);
+void	rotate_ab(int out, t_data **stk_a, t_data **stk_b);
 
 void	rev_rot(t_data **stk);
-void	rev_rot_a(t_data **stk_a, t_data **stk_b);
-void	rev_rot_b(t_data **stk_a, t_data **stk_b);
-void	rev_rot_ab(t_data **stk_a, t_data **stk_b);
+void	rev_rot_a(int out, t_data **stk_a, t_data **stk_b);
+void	rev_rot_b(int out, t_data **stk_a, t_data **stk_b);
+void	rev_rot_ab(int out, t_data **stk_a, t_data **stk_b);
 
 /*
 ** PRAGMA GENERAL functions
@@ -118,7 +118,7 @@ t_data	*ft_merge(t_data *stk_a, t_data *stk_b);
 t_data	*ft_merge_sort(t_data *stk_a);
 t_data	*ft_stack_split(t_data **stk, int len);
 void	ft_remv_elm_a(t_data **stk_a, t_data **stk_b, int *a_len);
-void	ft_remv_elm_b(t_data **stk_a, t_data **stk_b);
+void	ft_remv_elm_b(int out, t_data **stk_a, t_data **stk_b);
 short	ft_order_two(t_data **stk_a, t_data **stk_b);
 void	ft_next_stkelm(char *nptr, long *num);
 
