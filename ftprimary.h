@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:02:12 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 11:45:53 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 13:30:27 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	checker(t_data *stk_a, t_data *stk_b);
 void	ft_sort(t_data **a, t_data **b, t_data *oper);
 int		get_next_line(int fd, char **line);
 t_data	*ft_getlist_instr(void);
+void	ft_set_next_instr(char *el, t_data **ins_lst);
 
 /*
 ** PUSH SWAP general use functions for sorting data elements

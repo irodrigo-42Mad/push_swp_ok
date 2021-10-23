@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:45:38 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 11:48:59 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 13:30:18 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	get_instr(char *action)
 
 t_data	*ft_getlist_instr(void)
 {
-	// por aqui andurio
 	t_data	*instr;
 	char	*line;
 	int		read;
@@ -44,7 +43,7 @@ t_data	*ft_getlist_instr(void)
 	while (read)
 	{
 		if (*line && *line != '\n')
-			set_next_instr(line, &instr);
+			ft_set_next_instr(line, &instr);
 		free(line);
 		read = get_next_line(0, &line);
 	}
@@ -52,7 +51,7 @@ t_data	*ft_getlist_instr(void)
 	return (instr);
 }
 
-void	set_next_instr(char *el, t_data **ins_lst)
+void	ft_set_next_instr(char *el, t_data **ins_lst)
 {
 	int		num_instr;
 	t_data	*last;
@@ -63,14 +62,14 @@ void	set_next_instr(char *el, t_data **ins_lst)
 	{
 		num_instr = get_instr(el);
 		if (num_instr > 10)
-			error();
+			ft_write_error("Error", "");
 		next_instr->val = num_instr;
 		next_instr->next = NULL;
 		if (!*ins_lst)
 			*ins_lst = next_instr;
 		else
 		{
-			last = lst_last(*ins_lst);
+			last = ft_getlast(*ins_lst);
 			last->next = next_instr;
 		}
 	}

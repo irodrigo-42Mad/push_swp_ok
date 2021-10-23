@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:53:42 by irodrigo          #+#    #+#             */
-/*   Updated: 2021/10/23 11:47:00 by irodrigo         ###   ########.fr       */
+/*   Updated: 2021/10/23 13:25:39 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ int	main(int argc, char **argv)
 
 
 	// hasta aqui está revisado
-	
-	
-	// falta la funcion de normalizar
-	//normalize(&a);
 	instr = ft_getlist_instr();
 	// falta la funcion de ordenar
 	ft_sort(&a, &b, instr);

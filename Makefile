@@ -6,7 +6,7 @@
 #    By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/24 13:40:37 by irodrigo          #+#    #+#              #
-#    Updated: 2021/10/23 12:52:37 by irodrigo         ###   ########.fr        #
+#    Updated: 2021/10/23 13:36:35 by irodrigo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAMEPUSH	= push_swap
 NAMEBONUS	= push_swap
 
 # SOURCES #
-SRC 		= 	ft_check_main ft_check_srt ft_action_rotate ft_action_swap ft_action_push ft_action_rev_rotate ft_check_error ft_gnl ft_common_stack ft_common_aux ft_list_operations ft_sort_algrthm ft_sort_algrthm_stkops ft_p_swp_func ft_push_swp_aux ft_push_stk_func ft_push_stk_aux ft_push_primary
+SRC 		= 	ft_check_main ft_action_rotate ft_action_swap ft_action_push ft_action_rev_rotate ft_check_error ft_gnl ft_common_stack ft_common_aux ft_list_operations ft_sort_algrthm ft_sort_algrthm_stkops ft_p_swp_func ft_push_swp_aux ft_push_stk_func ft_push_stk_aux ft_push_primary ft_check_srt ft_check_read
 SRCINIPUSH	=	ft_push_swp ft_action_rotate ft_action_swap ft_action_push ft_action_rev_rotate ft_check_error ft_gnl ft_common_stack ft_common_aux ft_list_operations ft_sort_algrthm ft_sort_algrthm_stkops ft_p_swp_func ft_push_swp_aux ft_push_stk_func ft_push_stk_aux ft_push_primary
 SRCBONUS 	=
 HLIBS		=	ftprimary.h
@@ -57,14 +57,18 @@ $(NAMEPUSH): $(OBJSPUSH)
 	@echo "$(BLUE)==========CREATING $(NAMEPUSH)==========$(RESET)"
 	@$(CC) $(INCLUDES) ${OBJSPUSH} $(LIBFT) ${LIBS} -o ${NAMEPUSH}
 	@echo "Done"
-	@echo "$(GREEN)OK$(RESET) creating $(NAMEPUSH) file"
+	@echo "$(GREEN)SUCCESS$(RESET) creating $(NAMEPUSH) file"
 
 $(NAMECHK): $(OBJSCHK)
 	@echo "$(BLUE)==========CREATING $(NAMECHK)==========$(RESET)"
 	@$(CC) $(INCLUDES) ${OBJSCHK} $(LIBFT) ${LIBS} -o ${NAMECHK}
 	@echo "Done"
-	@echo "Success creating $(NAMECHK) file"
+	@echo "$(GREEN)SUCCESS$(RESET) creating $(NAMECHK) file"
 	@echo "$(GREEN)==========WELLDONE==========$(RESET)"
+
+
+
+
 
 bonus:  $(OBJSBONUS)
 	@echo "$(BLUE)==========CREATING LIBFT==========$(RESET)"
